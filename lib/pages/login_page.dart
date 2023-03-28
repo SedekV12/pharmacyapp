@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
    LoginPage({Key? key}) : super(key: key);
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
             ElevatedButton(
               child: Text('login',style:TextStyle(color:Colors.black,fontSize: 24,fontFamily: 'Varela Round')),
               onPressed: () {
-                Navigator.pushNamed(context, 'SlidesPage');
+                Navigator.pushNamed(context, 'HomePage');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,

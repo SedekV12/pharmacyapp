@@ -1,9 +1,7 @@
 import 'package:chatapp/constants.dart';
 import 'package:chatapp/widgets/row.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/cupertino.dart';
-
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
@@ -82,7 +80,7 @@ class RegisterPage extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
+                    backgroundColor: Colors.white,
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20)
                 ),
               ),

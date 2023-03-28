@@ -26,7 +26,9 @@ class WelcomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
               Text('you are in the right place',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
-                Text('  any medicine you will need , you will find ',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
+                Text('any medicine you will',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
+                Text('need, you will find',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
+
                 SizedBox(height: 50,),
                 ElevatedButton(
                   child: Text('start',style:TextStyle(color:Colors.black,fontSize: 24,fontFamily: 'Varela Round')),
@@ -34,7 +36,7 @@ class WelcomePage extends StatelessWidget {
                     Navigator.pushNamed(context,'LoginPage');
                   },
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
+                      backgroundColor: Colors.white,
                       padding: EdgeInsets.symmetric(horizontal: 100,vertical: 20)
                   ),
                 ),
