@@ -3,6 +3,7 @@ import 'package:chatapp/widgets/custom_button.dart';
 import 'package:chatapp/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,38 +15,25 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green,
         title: Text('pharmacy app'),
       ),
-
       body: ListView(
         children:[
+          SizedBox(height: 10,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+                  decoration: InputDecoration(
+                  labelText: 'Search Pharmacies',
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+            )),
+          ),
           SizedBox(height: 10,),
           Container(
             padding: EdgeInsets.all(7),
             height: 250,
             width: 370,
-            child:
-            Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg',),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
             child: Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -122,7 +110,29 @@ class HomePage extends StatelessWidget {
                 child: Center(
                   child:
                   Row(
-
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 80,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage('assets/th.jpg'),
+                      ),
+                    ],
+                  ),
+                )
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(7),
+            height: 250,
+            width: 370,
+            child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                child: Center(
+                  child:
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CircleAvatar(
@@ -140,9 +150,10 @@ class HomePage extends StatelessWidget {
               onTap: (){
                 Navigator.pushNamed(context, 'HomePage2');
               },
-              child: Text('                  next page',style: TextStyle(color: Colors.white,fontSize: 28,fontFamily: 'Varela Round',),)),
+              child: Text('                  next page',style: TextStyle(color: Colors.white,fontSize: 28,fontFamily: 'Varela Round'),)),
           Icon(Icons.next_plan,size: 50,),
           SizedBox(height: 20,)
+
         ],
       ),
     );
