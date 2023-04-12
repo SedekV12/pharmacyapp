@@ -1,8 +1,8 @@
 import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +30,7 @@ class WelcomePage extends StatelessWidget {
                 Text('need, you will find',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
 
                 SizedBox(height: 50,),
-                ElevatedButton(
-                  child: Text('start',style:TextStyle(color:Colors.black,fontSize: 24,fontFamily: 'Varela Round')),
-                  onPressed: () {
-                    Navigator.pushNamed(context,'LoginPage');
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(horizontal: 100,vertical: 20)
-                  ),
-                ),
+                ElevatedButtom(entertext: 'Start',enterlocation: 'LoginPage',),
             ],
             ),
           )

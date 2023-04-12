@@ -1,5 +1,6 @@
 import 'package:chatapp/constants.dart';
-import 'package:chatapp/widgets/custom_button.dart';
+import 'package:chatapp/widgets/container.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage2 extends StatelessWidget {
@@ -16,127 +17,28 @@ class HomePage2 extends StatelessWidget {
       body: ListView(
         children:[
           SizedBox(height: 10,),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg'),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg'),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg'),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg'),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(7),
-            height: 250,
-            width: 370,
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                child: Center(
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/th.jpg'),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-          ),
+          Coontainer(),
+          Coontainer(),
+          Coontainer(),
+          Coontainer(),
           SizedBox(height: 10,),
-          GestureDetector(
-              onTap: (){},
-              child: Text('                  next page',style: TextStyle(color: Colors.white,fontSize: 28,fontFamily: 'Varela Round'),)),
-          Icon(Icons.next_plan,size: 50,),
-          SizedBox(height: 20,)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: RichText(text: TextSpan(children: [TextSpan(text: ' last page',style: TextStyle(fontSize: 30,fontFamily: 'Varela Round')),WidgetSpan(child: Icon(Icons.arrow_back_ios_sharp,size: 30,))]),
+                  )),
+              SizedBox(height: 10,),
+              GestureDetector(
+                  onTap: (){},
+                  child: RichText(text: TextSpan(children: [TextSpan(text: '      next page',style: TextStyle(fontSize: 30,fontFamily: 'Varela Round')),WidgetSpan(child: Icon(Icons.navigate_next,size: 30,))]),
+                  )),
+            ],
+          ),
+          SizedBox(height: 20,),
         ],
       ),
     );

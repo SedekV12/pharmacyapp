@@ -25,11 +25,9 @@ class TermsAgreements extends StatelessWidget {
                     },
                     child: Text('back to login page',style: TextStyle(color: Colors.white,fontSize: 28,fontFamily: 'Varela Round'),)),
                 SizedBox(height: 10,),
-
               ],
             ),
           ),
-
         ],
       ),
     ) ;

@@ -1,12 +1,17 @@
 import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/elevated_button.dart';
 import 'package:chatapp/widgets/row.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+   RegisterPage({Key? key}) : super(key: key);
+
+  String? email;
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class RegisterPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: ListView(
             children: [
-              SizedBox(height: 10,),
+
               CircleAvatar(
                 radius: 120,
                 backgroundColor: Colors.white,
@@ -49,6 +54,14 @@ class RegisterPage extends StatelessWidget {
                 hinText: 'last name',
               ),
               SizedBox(height: 10,),
+              Rows(text: 'enter your email',),
+              CustomTextField(
+                onChanged: (data){
+                  email=data;
+                },
+                hinText: 'email',
+              ),
+              SizedBox(height: 10,),
               Rows(text: 'enter your address',),
               CustomTextField(
                 hinText: 'address',
@@ -61,6 +74,9 @@ class RegisterPage extends StatelessWidget {
               SizedBox(height: 10,),
               Rows(text: 'enter your password',),
               CustomTextField(
+                onChanged: (data){
+                  password=data;
+                },
                 hinText: 'Password',
               ),
               SizedBox(height: 10,),
@@ -74,16 +90,20 @@ class RegisterPage extends StatelessWidget {
                 hinText: 'gender',
               ),
               SizedBox(height: 20,),
-              ElevatedButton(
-                child: Text('Regestier',style:TextStyle(color:Colors.black,fontSize: 24,fontFamily: 'Varela Round')),
-                onPressed: () {
-                  Navigator.pop(context);
+              ElevatedButtom(
+                onTap: () async {
+                     try{
+                       await registeruser();
+                  } on FirebaseAuthException catch(ex){
+                       if (ex.code == 'weak-password') {
+                         showsnackbar(context,'week password');
+                       } else if (ex.code == 'email-already-in-use') {
+                         showsnackbar(context,'email already in use');
+                       }
+                     }
+                     showsnackbar(context,'success');
                 },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20)
-                ),
-              ),
+                entertext: 'Register',enterlocation: 'LoginPage',),
               SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -103,5 +123,16 @@ class RegisterPage extends StatelessWidget {
         )
     );
 
+  }
+
+  void showsnackbar(BuildContext context,message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)));
+  }
+
+  Future<void> registeruser() async {
+    UserCredential user = await FirebaseAuth.instance
+     .createUserWithEmailAndPassword(
+         email: email!, password: password!);
   }
 }

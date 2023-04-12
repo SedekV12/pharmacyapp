@@ -1,15 +1,12 @@
 
 import 'package:chatapp/constants.dart';
-import 'package:chatapp/pages/register_page.dart';
-import 'package:chatapp/widgets/custom_button.dart';
 import 'package:chatapp/widgets/custom_text_field.dart';
+import 'package:chatapp/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 
 
 class LoginPage extends StatelessWidget {
    LoginPage({Key? key}) : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +47,7 @@ class LoginPage extends StatelessWidget {
               hinText: 'Password',
             ),
             SizedBox(height: 20,),
-            ElevatedButton(
-              child: Text('login',style:TextStyle(color:Colors.black,fontSize: 24,fontFamily: 'Varela Round')),
-              onPressed: () {
-                Navigator.pushNamed(context, 'HomePage');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 50,vertical: 20)
-              ),
-            ),
+            ElevatedButtom(entertext: 'Login',enterlocation: 'HomePage',),
             SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
