@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 
-class CustomTextField extends StatelessWidget {
-  CustomTextField({this.hinText,this.onChanged});
+class CustomTextFormField extends StatelessWidget {
+  CustomTextFormField({this.hinText,this.onChanged,this.obscureText = false});
 
   String? hinText;
   Function(String)? onChanged;
+  bool? obscureText;
+
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      obscureText: obscureText!,
+      validator: (data)  {
+         if(data!.isEmpty)
+        {
+          return('that was wrong');
+        }
+      },
       onChanged: onChanged,
       decoration:InputDecoration(
           focusedBorder: OutlineInputBorder(
@@ -24,12 +33,12 @@ class CustomTextField extends StatelessWidget {
           ),
           enabledBorder:OutlineInputBorder(
               borderSide: BorderSide(
-                  color: Colors.white
+                  color: Colors.white,
               )
           ) ,
           border: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: Colors.white
+                  color: Colors.white,
               )
           )
       ) ,

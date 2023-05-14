@@ -1,5 +1,6 @@
 import 'package:chatapp/constants.dart';
 import 'package:chatapp/widgets/container.dart';
+import 'package:chatapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -8,11 +9,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var email = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
         backgroundColor: Colors.green.shade800,
         title: Text('pharmacy app'),
+        centerTitle: true,
       ),
       drawer: Drawer(
         child: ListView(
@@ -27,45 +30,47 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(leading:Icon(Icons.account_box_rounded),title: Text('Account'),),
             ListTile(leading:Icon(Icons.settings),title: Text('Settings'),),
-            ListTile(leading:Icon(Icons.logout),title: Text('Logout'),
-
-                ),],
+            GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, 'ChatPage',arguments: email);
+                },
+                child: ListTile(leading:Icon(Icons.contact_mail_sharp),title: Text('contact us'),)),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context,'LoginPage');
+              },
+              child: ListTile(leading:Icon(Icons.logout),title: Text('Logout'),),
+            ),
+          ],
         ),
       ),
-      body: ListView(
-        children:[
-          SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextField(
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      )
-                    ),
-                    label: Text('Search',style: TextStyle(color: Colors.white),),
-                    suffixIcon: Icon(Icons.search_rounded,color: Colors.white,),
-                    border: OutlineInputBorder(),
-                    hintText: 'Search Pharmases'
-            )
-            ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.house),
+            label: 'home',
           ),
-          SizedBox(height: 10,),
-          Coontainer(enterlocation: 'Boxx',),
-          Coontainer(),
-          Coontainer(),
-          Coontainer(),
-          SizedBox(height: 10,),
-          GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context, 'HomePage2');
-              },
-              child: RichText(text: TextSpan(children: [TextSpan(text: '                 next page',style: TextStyle(fontSize: 30,fontFamily: 'Varela Round')),WidgetSpan(child: Icon(Icons.next_plan,size: 30,))]),
-              )),
-          SizedBox(height: 10,),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag),
+              label: 'your Purchases'
+          ),
         ],
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            SearchBar(),
+            Container(height: 10,),
+            Expanded(
+              child: ListView.builder(itemBuilder: (context,index){
+                return CustomContainer(enterlocation: 'Products',);
+              }),
+            ),
+          ],
+        ),
+      )
     );
   }
 }

@@ -10,7 +10,7 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       body: ListView(
         children: [
-          SizedBox(height: 50,),
+          Container(height: 20,),
           CircleAvatar(
             radius: 120,
             backgroundColor: Colors.white,
@@ -19,7 +19,7 @@ class WelcomePage extends StatelessWidget {
               backgroundImage: AssetImage('assets/th.jpg'),
             ),
           ),
-          SizedBox(height: 50,),
+          Container(height: 50,),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
             child: Column(
@@ -28,9 +28,8 @@ class WelcomePage extends StatelessWidget {
               Text('you are in the right place',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
                 Text('any medicine you will',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
                 Text('need, you will find',style: TextStyle(fontSize: 28,color: Colors.white,fontFamily: 'Varela Round'),),
-
-                SizedBox(height: 50,),
-                ElevatedButtom(entertext: 'Start',enterlocation: 'LoginPage',),
+                Container(height: 30,),
+                ElevatedButtom(entertext: 'Start',onTap: (){Navigator.pushNamed(context, 'LoginPage');}),
             ],
             ),
           )

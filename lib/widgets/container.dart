@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Coontainer extends StatelessWidget {
-  Coontainer({this.enterlocation});
+class CustomContainer extends StatelessWidget {
+  CustomContainer({this.enterlocation});
   String? enterlocation;
   @override
   Widget build(BuildContext context) {
@@ -26,6 +26,14 @@ class Coontainer extends StatelessWidget {
                     radius: 80,
                     backgroundColor: Colors.white,
                     backgroundImage: AssetImage('assets/th.jpg'),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('ELEZABY',style: TextStyle(fontSize: 22,color: Colors.black,fontFamily: 'Varela Round')),
+                      Text('Its 10 kilometers away.',style: TextStyle(fontSize: 18,color: Colors.black,fontFamily: 'Varela Round')),
+                      Text('RATE 4.5',style: TextStyle(fontSize: 22,color: Colors.black,fontFamily: 'Varela Round')),
+                    ],
                   ),
                 ],
               ),

@@ -1,6 +1,5 @@
 import 'package:chatapp/constants.dart';
 import 'package:chatapp/widgets/container.dart';
-
 import 'package:flutter/material.dart';
 
 class HomePage2 extends StatelessWidget {
@@ -16,11 +15,12 @@ class HomePage2 extends StatelessWidget {
       ),
       body: ListView(
         children:[
-          SizedBox(height: 10,),
-          Coontainer(),
-          Coontainer(),
-          Coontainer(),
-          Coontainer(),
+          Container(height: 20,),
+          CustomContainer(),
+          CustomContainer(),
+          CustomContainer(),
+          CustomContainer(),
+          CustomContainer(),
           SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +38,7 @@ class HomePage2 extends StatelessWidget {
                   )),
             ],
           ),
-          SizedBox(height: 20,),
+          Container(height: 20,),
         ],
       ),
     );
