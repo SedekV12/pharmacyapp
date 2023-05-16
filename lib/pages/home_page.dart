@@ -4,12 +4,18 @@ import 'package:chatapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int selected = 0;
+  @override
   Widget build(BuildContext context) {
-    var email = ModalRoute.of(context)!.settings.arguments;
+    String email = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
@@ -45,6 +51,11 @@ class HomePage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          selected = value;
+          setState(() {});
+        },
+        currentIndex: selected,
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
@@ -57,7 +68,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      body:selected == 0? Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
@@ -70,7 +81,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      )
+      ):Scaffold(),
     );
   }
 }

@@ -7,7 +7,7 @@ class CustomProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(7),
+      padding: EdgeInsets.all(5),
       height: 120,
       child: Container(
           decoration: BoxDecoration(
@@ -16,7 +16,6 @@ class CustomProduct extends StatelessWidget {
           child: Center(
             child:
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CircleAvatar(
                   radius: 40,
@@ -31,6 +30,11 @@ class CustomProduct extends StatelessWidget {
                     Container(height: 15,),
                   ],
                 ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueGrey.shade900),
+                    onPressed: () {},
+                    child: const Text('Add to Cart')),
             ])
           )
       ),

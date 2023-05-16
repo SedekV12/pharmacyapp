@@ -77,7 +77,6 @@ class _LoginPageState extends State<LoginPage> {
                 Container(height: 20,),
                 ElevatedButtom(
                   onTap: () async {
-                    print(email);
                     if (formKey.currentState!.validate()) {
                       isloading = true;
                       setState(() {});
@@ -95,9 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                         showsnackbar(context,'there was an error');
                       }
                       isloading = false;
-                      setState(() {
-
-                      });
+                      setState(() {});
                     }
                   },
                   entertext: 'Login',),
