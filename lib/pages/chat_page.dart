@@ -24,7 +24,7 @@ class ChatPage extends StatelessWidget {
           }
           return  Scaffold(
             appBar: AppBar(
-              automaticallyImplyLeading: false,
+              automaticallyImplyLeading: true,
               backgroundColor: kPrimaryColor,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

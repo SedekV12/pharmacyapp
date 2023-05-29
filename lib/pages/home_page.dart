@@ -34,8 +34,6 @@ class _HomePageState extends State<HomePage> {
               ),
               currentAccountPictureSize: Size.square(70),
             ),
-            ListTile(leading:Icon(Icons.account_box_rounded),title: Text('Account'),),
-            ListTile(leading:Icon(Icons.settings),title: Text('Settings'),),
             GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, 'ChatPage',arguments: email);
@@ -76,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             Container(height: 10,),
             Expanded(
               child: ListView.builder(itemBuilder: (context,index){
-                return CustomContainer(enterlocation: 'Products',);
+                return CustomContainer(enterlocation: 'ItemsPage',);
               }),
             ),
           ],

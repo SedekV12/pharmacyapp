@@ -31,9 +31,7 @@ class _ProductsState extends State<Products> {
                backgroundColor: Colors.white,
              backgroundImage: AssetImage('assets/R.jpg'),),
              currentAccountPictureSize: Size.square(70),),
-               ListTile(leading:Icon(Icons.account_box_rounded),title: Text('Account'),),
-              ListTile(leading:Icon(Icons.settings),title: Text('Settings'),),
-            GestureDetector(
+               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, 'ChatPage');
                 },
