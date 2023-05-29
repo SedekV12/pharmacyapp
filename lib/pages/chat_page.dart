@@ -1,5 +1,5 @@
 
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/widgets/chat_buble.dart';
 import 'package:chatapp/widgets/message.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,8 @@ class ChatPage extends StatelessWidget {
           return  Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: true,
-              backgroundColor: kPrimaryColor,
+              elevation: 0,
+              backgroundColor:Colors.white,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -34,7 +35,7 @@ class ChatPage extends StatelessWidget {
                     backgroundColor: Colors.white,
                     backgroundImage: AssetImage('assets/th.jpg'),
                   ),
-                  Text('  pharmacy app'),
+                  Text('  pharmacy app',style: TextStyle(color:kPrimaryColor),),
                 ],
               ),
             ),

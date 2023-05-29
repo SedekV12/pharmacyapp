@@ -1,5 +1,5 @@
 
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/widgets/product_wedget.dart';
 import 'package:chatapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';

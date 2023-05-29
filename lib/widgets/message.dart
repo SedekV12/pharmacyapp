@@ -1,5 +1,5 @@
 
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 
 class Message
 {

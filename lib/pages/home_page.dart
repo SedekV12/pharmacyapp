@@ -1,4 +1,4 @@
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/widgets/container.dart';
 import 'package:chatapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.green.shade800,
         title: Text('pharmacy app'),
+        elevation: 0,
         centerTitle: true,
       ),
       drawer: Drawer(

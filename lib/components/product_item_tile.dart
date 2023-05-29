@@ -23,10 +23,10 @@ class ProductItemTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(imagepath,height: 80,),
-            Text(itemname),
+            Text(itemname,style: TextStyle(fontSize: 24,fontFamily: 'Varela Round'),),
             MaterialButton(onPressed: onPressed,
               color: color[800],
-              child: Text('\$' + itemprice,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+              child: Text('\$' + itemprice,style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Varela Round'),),
             )
           ],
         ),

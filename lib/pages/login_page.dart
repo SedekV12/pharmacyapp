@@ -1,5 +1,5 @@
 
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/widgets/custom_text_field.dart';
 import 'package:chatapp/widgets/elevated_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,4 +1,4 @@
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/widgets/elevated_button.dart';
 import 'package:chatapp/widgets/row.dart';
 import 'package:firebase_auth/firebase_auth.dart';

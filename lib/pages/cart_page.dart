@@ -1,5 +1,5 @@
 
-import 'package:chatapp/constants.dart';
+import 'package:chatapp/widgets/constants.dart';
 import 'package:chatapp/model/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +13,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
-        title: Text('My Cart',style: TextStyle(fontSize: 26),),
+        title: Text('My Cart',style: TextStyle(fontSize: 26,fontFamily: 'Varela Round'),),
         elevation: 0,
         centerTitle: true,
       ),
@@ -60,9 +60,9 @@ class CartPage extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Total Price',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                        Text('Total Price',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,fontFamily: 'Varela Round'),),
                         SizedBox(height: 5,),
-                        Text('\$'+value.calculateTotal(),style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                        Text('\$'+value.calculateTotal(),style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,fontFamily: 'Varela Round'),),
                       ],
                     ),
                     Container(
@@ -73,7 +73,7 @@ class CartPage extends StatelessWidget {
                       padding: EdgeInsets.all(12),
                       child: Row(
                         children: [
-                          Text('Pay Now',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                          Text('Pay Now',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,fontFamily: 'Varela Round'),),
                           Icon(Icons.arrow_forward_ios),
                         ],
                       ),
